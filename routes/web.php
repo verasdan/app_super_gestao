@@ -17,11 +17,7 @@ Route::get('/', 'PrincipalController@principal' );
 Route::get('/sobre-nos', 'SobreNosController@sobreNos' );
 Route::get('/contato', 'ContatoController@contato' );
 
-Route::get('/contato/{nome}/{categoria_id}',
-    function(
-        string $nome, 
-        int $categoria_id=1 // 1- Informação
-    ) {
-        echo "Estamos aqui: $nome - $categoria";
-    }
-)->where('nome','[A-Za-z]+')->where('categoria_id', '[0-9]+');
+Route::get('/login', function(){ return 'Login'; });
+Route::get('/clientes', function(){ return 'Clientes'; });
+Route::get('/fornecedores', function(){ return 'Fornecedores'; });
+Route::get('/produtos', function(){ return 'Produtos'; });
